@@ -37,7 +37,7 @@ int main()
 
   printf("Valor removido: %d\n", removeInicio(&lista));
   printf("Valor removido: %d\n", removeFinal(&lista));
-  printf("Valor removido: %d\n", removePosicao(&lista, 2));
+  printf("Valor removido: %d\n", removePosicao(&lista, 6));
 
   imprimeLista(lista);
 
@@ -80,13 +80,12 @@ void inserePosicao(tipoNo **lista, int vl, int pos)
       aux = aux->prox;
       cont++;
     }
-    if (aux != (*lista) && cont == pos) {
+    if (aux->prox != (*lista) && cont == pos) {
       novo = alocaNo(vl);
       novo->prox = aux;
       aux2->prox = novo;
-    } else if (aux == *lista && cont == pos) {
-      novo = alocaNo(vl);
-      aux2->prox = novo;
+    } else if (aux->prox == *lista && cont + 1 == pos) {
+      insereFinal(lista, vl);
     } else {
       printf("[ERRO]: Posicao invalida\n");
     }
@@ -137,23 +136,24 @@ int removePosicao(tipoNo **lista, int pos) {
   if (*lista != NULL) {
     tipoNo *aux = (*lista), *aux2;
     int valor, cont = 0;
-    while (aux->prox != (*lista) && cont < pos) {
-      aux2 = aux;
-      aux = aux->prox;
-      cont++;
-    }
-    if (aux != (*lista) && cont == pos) {
-      valor = aux->valor;
-      aux2->prox = aux->prox;
-      free(aux);
-      return valor;
-    } else if (aux == *lista && cont == pos) {
-      valor = aux->valor;
-      free(aux);
-      *lista == NULL;
-      return valor;
-    } else {
-      printf("[ERRO]: Posicao invalida\n");
+    if (pos == 0) return removeInicio(lista);
+    else {
+      while (aux->prox != (*lista) && cont < pos) {
+        aux2 = aux;
+        aux = aux->prox;
+        cont++;
+      }
+      if (aux != (*lista) && cont == pos) {
+        valor = aux->valor;
+        aux2->prox = aux->prox;
+        free(aux);
+        return valor;
+      } else if (aux == *lista && cont == pos) {
+        return removeInicio(lista);
+      } else {
+        printf("[ERRO]: Posicao invalida\n");
+        return -1;
+      }
     }
   }else {
     printf("[ERRO]: Nao ha itens para remocao. Lista vazia!\n");
