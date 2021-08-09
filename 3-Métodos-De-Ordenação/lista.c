@@ -88,7 +88,7 @@ void imprimeLista(tipo_lista lst)
   {
     printf("%d ", lst.lista[i]);
   }
-  printf("]\nContador=%d\n", lst.contador);
+  printf("]\n");
 }
 
 int removeInicio(tipo_lista *lst)

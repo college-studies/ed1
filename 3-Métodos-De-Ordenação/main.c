@@ -21,7 +21,8 @@ int main()
 
   // bubbleSort(&lista);
   // shellSort(&lista);
-  lista = insertSort(lista);
+  // lista = insertSort(lista);
+  mergeSort(&lista);
 
   imprimeLista(lista);
 
