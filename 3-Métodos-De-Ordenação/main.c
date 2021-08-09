@@ -13,14 +13,15 @@ int main()
   insereFim(&lista, 1);
   insereFim(&lista, 4);
   insereFim(&lista, 3);
-  insereFim(&lista, 8);
+  insereFim(&lista, 6);
   insereFim(&lista, 2);
-  insereFim(&lista, 9);
+  insereFim(&lista, 5);
 
   imprimeLista(lista);
 
   // bubbleSort(&lista);
-  shellSort(&lista);
+  // shellSort(&lista);
+  lista = insertSort(lista);
 
   imprimeLista(lista);
 
