@@ -10,7 +10,7 @@
 #include "quickSort.c"
 #include "shellSort.c"
 
-// Para alterar o valor de Números gerados, basta alterar a constante N em "lista.c"
+// Para alterar o valor de Números gerados, basta alterar a constante N no arquivo "lista.c"
 
 void insereValoresAleatorios(tipo_lista *lst);
 
@@ -28,12 +28,15 @@ int main()
   imprimeLista(lista);
 
   inicio = clock();
-  // Basta Descomentar o método que quiser testar;
-  // bubbleSort(&lista);
+
+  // Basta alterar o comentario com base no método que quiser testar;
+
+  bubbleSort(&lista);
   // shellSort(&lista);
   // lista = insertSort(lista);
   // mergeSort(&lista);
-  quickSort(&lista);
+  // quickSort(&lista);
+
   fim = clock();
   tempoCPU = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
@@ -48,6 +51,6 @@ void insereValoresAleatorios(tipo_lista *lst)
 {
   while (lst->contador != N)
   {
-    insereFim(lst, rand() % 10000);
+    insereFim(lst, rand() % 1000);
   }
 }

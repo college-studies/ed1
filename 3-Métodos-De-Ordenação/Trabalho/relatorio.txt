@@ -1,0 +1,9 @@
+Para uma mesma lista aleatória de 10000 valores obtive os seguintes resultados:
+
+Obs: (fiz uma média com base em 5 execuções de cada método)
+
+Bubble Sort - 0.286671s
+Shell Sort - 0.122762s
+Inser Sort - 0.147151s
+Merge Sort - 0.002815s
+Quick Sort - 0.002736s
