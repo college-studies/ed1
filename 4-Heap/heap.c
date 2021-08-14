@@ -6,11 +6,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 20
+#define N_HEAP 20
 
 struct heap_est
 {
-  int heap[N];
+  int heap[N_HEAP];
   int cont;
 };
 typedef struct heap_est tipo_heap;
