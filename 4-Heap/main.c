@@ -18,5 +18,16 @@ int main()
 
   imprimeHeap(heap);
 
+  printf("Removido: %d\n", removeHeap(&heap));
+  imprimeHeap(heap); 
+  printf("Removido: %d\n", removeHeap(&heap));
+  imprimeHeap(heap); 
+  printf("Removido: %d\n", removeHeap(&heap));
+  imprimeHeap(heap); 
+  printf("Removido: %d\n", removeHeap(&heap));
+  imprimeHeap(heap); 
+  printf("Removido: %d\n", removeHeap(&heap));
+  imprimeHeap(heap); 
+
   return 1;
 }
