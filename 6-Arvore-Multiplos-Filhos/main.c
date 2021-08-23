@@ -2,23 +2,22 @@
 #include <stdlib.h>
 
 #include "arvoreMultiFilhos.c"
-#include "lista.c"
-
 
 int main()
 {
-  tipo_arvore_mFilhos *arvore = NULL;
+  tipo_arv_mf *arvore;
+  arvore = NULL;
 
-  insereArvoreMFilhos(&arvore, 10);
-  insereArvoreMFilhos(&arvore, 7);
-  insereArvoreMFilhos(&arvore, 1);
+  insereArvBin(&arvore, 10);
+  insereArvBin(&arvore, 7);
+  insereArvBin(&arvore, 1);
 
-  insereArvoreMFilhos(&arvore, 15);
-  insereArvoreMFilhos(&arvore, 0);
-  insereArvoreMFilhos(&arvore, 5);
-  insereArvoreMFilhos(&arvore, 8);
+  insereArvBin(&arvore, 15);
+  insereArvBin(&arvore, 0);
+  insereArvBin(&arvore, 5);
+  insereArvBin(&arvore, 8);
 
-  percursoPreOrdem(arvore);
+  percursoPreOrdemMF(arvore);
   printf("\n");
 
   return 1;

@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #ifndef ARVBIN_C
 #define ARVBIN_C
 
