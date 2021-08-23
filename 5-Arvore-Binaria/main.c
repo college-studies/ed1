@@ -2,8 +2,6 @@
 #include <stdlib.h>
 
 #include "arvoreBin.c"
-#include "lista.c"
-
 
 int main()
 {
@@ -17,10 +15,13 @@ int main()
   insereArvoreBin(&arvore, 20);
   insereArvoreBin(&arvore, 40);
 
+  printf("Pre Ordem: ");
   imprimePreOrdem(arvore);
-  printf("\n");
+
+  printf("\nOrdem: ");
   imprimeOrdem(arvore);
-  printf("\n");
+
+  printf("\nPos Ordem: ");
   imprimePosOrdem(arvore);
   printf("\n");
 
