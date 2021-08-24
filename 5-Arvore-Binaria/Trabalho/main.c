@@ -2,8 +2,6 @@
 #include <stdlib.h>
 
 #include "arvoreBin.c"
-#include "lista.c"
-
 
 int main()
 {
@@ -17,20 +15,38 @@ int main()
   insereArvoreBin(&arvore, 20);
   insereArvoreBin(&arvore, 40);
 
+  printf("Pre Ordem :  ");
   imprimePreOrdem(arvore);
-  printf("\n");
+
+  printf("\nOrdem :      ");
   imprimeOrdem(arvore);
-  printf("\n");
+
+  printf("\nPos Ordem:   ");
   imprimePosOrdem(arvore);
   printf("\n");
 
-  printf("Altura da arvore: %d\n", alturaArvoreBin(arvore));
+  if (buscaPorValor(arvore, 40))
+    printf("Valor presente na arvore\n\n");
+  else
+    printf("Valor não existe na arvore\n\n");
 
-  imprimeNivel(arvore, 2);
+  int removeElemento = 40;
+  printf("Remove Elemento: %d\n\nArvore Após remoção:", removeElemento);
+  removeElementoArvBin(&arvore, removeElemento);
+  imprimePreOrdem(arvore);
+  printf("\n");
 
+  printf("\nQuantidade de Nos: %d\n", verificaQtdNos(arvore));
+
+  printf("\nAltura da Arvore: %d\n", alturaArv(arvore));
+
+  int nivel = 1;
+  printf("\nValores no nivel [%d] : ", nivel);
+  imprimeNivel(arvore, nivel);
+  printf("\n");
+
+  printf("Nos Folhas: ");
   imprimeNosFolhaArvoreBin(arvore);
-
-  printf("Somatoria itens da arvore: %d\n", contagemNosArvoreBin(arvore));
 
   return 1;
 }
