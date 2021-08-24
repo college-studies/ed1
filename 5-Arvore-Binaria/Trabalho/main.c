@@ -6,7 +6,7 @@
 
 int main()
 {
-  // ---------------------------Arvore Binária------------------------------------- //
+  printf("// ---------------------------Arvore Binária------------------------------------- //\n\n");
 
   tipo_arvore_binaria *arvore = criarArvoreBin();
 
@@ -54,7 +54,7 @@ int main()
 
   printf("\n");
 
-  printf("// ---------------------------Arvore MF------------------------------------- //\n");
+  printf("// ---------------------------Arvore MF------------------------------------- //\n\n");
   tipo_arv_mf *arvoreMF;
   arvoreMF = NULL;
 
@@ -100,6 +100,14 @@ int main()
   printf("Altura Arvore MF: %d\n", checaAlturaArvMF(arvoreMF));
 
   printf("\nQtd total Valores na Arvore MF: %d\n", qtdValoresNaArvMF(arvoreMF));
+
+  // printf("Nos Folhas da Arvore MF: ");
+  // imprimeNosFolhaArvoreMF(arvoreMF);
+
+  // int nivelMF = 1;
+  // printf("\nValores no nivel [%d] : ", nivelMF);
+  // imprimeNivelMF(arvoreMF, nivelMF);
+  // printf("\n");
 
   return 1;
 }

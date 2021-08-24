@@ -24,6 +24,10 @@ int menor(tipo_arv_mf *arv);
 int checaAlturaArvMF(tipo_arv_mf *arv);
 int qtdValoresNaArvMF(tipo_arv_mf *arv);
 
+// TODO: implement
+void imprimeNosFolhaArvoreMF(tipo_arv_mf *arv);
+void imprimeValoresPorNivelMF(tipo_arv_mf *arv, int nivel);
+
 tipo_arv_mf *alocaNovoNoArvMF(int vl)
 {
   int i;
@@ -372,6 +376,14 @@ int qtdValoresNaArvMF(tipo_arv_mf *arv)
 
     return (cont + arv->cont);
   }
+}
+
+void imprimeNosFolhaArvoreMF(tipo_arv_mf *arv)
+{
+}
+
+void imprimeValoresPorNivelMF(tipo_arv_mf *arv, int nivel)
+{
 }
 
 #endif
