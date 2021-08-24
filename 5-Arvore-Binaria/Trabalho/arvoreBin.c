@@ -19,8 +19,6 @@ int buscaPorValor(tipo_arvore_binaria *arv, int vl);
 void removeElementoArvBin(tipo_arvore_binaria **arv, int vl);
 int verificaQtdNos(tipo_arvore_binaria *arv);
 int alturaArv(tipo_arvore_binaria *arv);
-
-// Funcoes Auxiliares
 int encontraMaiorValorArv(tipo_arvore_binaria *arv);
 int encontraMenorValorArv(tipo_arvore_binaria *arv);
 int calculaAltura(tipo_arvore_binaria *arv);
