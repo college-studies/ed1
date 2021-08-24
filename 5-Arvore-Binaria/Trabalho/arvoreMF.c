@@ -12,7 +12,7 @@ struct est_arv_mf
 typedef struct est_arv_mf tipo_arv_mf;
 
 tipo_arv_mf *alocaNovoNoArvMF(int valor);
-void insereArvBin(tipo_arv_mf **arv, int valor);
+void insereArvMF(tipo_arv_mf **arv, int valor);
 void percursoPreOrdemMF(tipo_arv_mf *arv);
 void percursoOrdemMF(tipo_arv_mf *arv);
 void percursoPosOrdemMF(tipo_arv_mf *arv);
@@ -43,7 +43,7 @@ tipo_arv_mf *alocaNovoNoArvMF(int vl)
   return novo_no;
 }
 
-void insereArvBin(tipo_arv_mf **arv, int valor)
+void insereArvMF(tipo_arv_mf **arv, int valor)
 {
   int i;
 
@@ -73,7 +73,7 @@ void insereArvBin(tipo_arv_mf **arv, int valor)
       {
         i++;
       }
-      insereArvBin(&(*arv)->filhos[i], valor);
+      insereArvMF(&(*arv)->filhos[i], valor);
     }
   }
 }

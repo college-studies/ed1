@@ -58,14 +58,14 @@ int main()
   tipo_arv_mf *arvoreMF;
   arvoreMF = NULL;
 
-  insereArvBin(&arvoreMF, 10);
-  insereArvBin(&arvoreMF, 7);
-  insereArvBin(&arvoreMF, 1);
+  insereArvMF(&arvoreMF, 10);
+  insereArvMF(&arvoreMF, 7);
+  insereArvMF(&arvoreMF, 1);
 
-  insereArvBin(&arvoreMF, 15);
-  insereArvBin(&arvoreMF, 0);
-  insereArvBin(&arvoreMF, 5);
-  insereArvBin(&arvoreMF, 8);
+  insereArvMF(&arvoreMF, 15);
+  insereArvMF(&arvoreMF, 0);
+  insereArvMF(&arvoreMF, 5);
+  insereArvMF(&arvoreMF, 8);
 
   printf("Pre Ordem :  ");
   percursoPreOrdemMF(arvoreMF);
