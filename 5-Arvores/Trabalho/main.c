@@ -67,12 +67,6 @@ int main()
   insereArvMF(&arvoreMF, 5);
   insereArvMF(&arvoreMF, 8);
 
-  printf("Impressao de valores por nivel ");
-  imprimeValoresPorNivelMF(arvoreMF, 0);
-
-  printf("Impressao de nos folha ");
-  imprimeNosFolhaArvoreMF(arvoreMF);
-
   printf("Pre Ordem :  ");
   percursoPreOrdemMF(arvoreMF);
 
@@ -107,13 +101,12 @@ int main()
 
   printf("\nQtd total Valores na Arvore MF: %d\n", qtdValoresNaArvMF(arvoreMF));
 
-  // printf("Nos Folhas da Arvore MF: ");
-  // imprimeNosFolhaArvoreMF(arvoreMF);
+  int nivelMF = 0;
+  printf("\nImpressao de valores no nivel %d: ", nivel);
+  imprimeValoresPorNivelMF(arvoreMF, nivelMF);
 
-  // int nivelMF = 1;
-  // printf("\nValores no nivel [%d] : ", nivelMF);
-  // imprimeNivelMF(arvoreMF, nivelMF);
-  // printf("\n");
+  printf("\nImpressao de nos folha: ");
+  imprimeNosFolhaArvoreMF(arvoreMF);
 
   return 1;
 }
