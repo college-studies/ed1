@@ -23,10 +23,9 @@ int maior(tipo_arv_mf *arv);
 int menor(tipo_arv_mf *arv);
 int checaAlturaArvMF(tipo_arv_mf *arv);
 int qtdValoresNaArvMF(tipo_arv_mf *arv);
-
-// TODO: implement
-void imprimeNosFolhaArvoreMF(tipo_arv_mf *arv);
 void imprimeValoresPorNivelMF(tipo_arv_mf *arv, int nivel);
+void imprimeValoresPorNivelMFRec(tipo_arv_mf *arv, int nivel, int nivelPassagem);
+void imprimeNosFolhaArvoreMF(tipo_arv_mf *arv);
 
 tipo_arv_mf *alocaNovoNoArvMF(int vl)
 {
@@ -378,12 +377,31 @@ int qtdValoresNaArvMF(tipo_arv_mf *arv)
   }
 }
 
-void imprimeNosFolhaArvoreMF(tipo_arv_mf *arv)
-{
-}
-
 void imprimeValoresPorNivelMF(tipo_arv_mf *arv, int nivel)
 {
+  printf("[ ");
+  imprimeValoresPorNivelMFRec(arv, nivel, 0);
+  printf("]\n");
+}
+
+void imprimeValoresPorNivelMFRec(tipo_arv_mf *arv, int nivel, int nivelPassagem)
+{
+  tipo_arv_mf *aux;
+  aux = arv;
+  if (arv != NULL)
+  {
+    for (int i = 0; i < aux->cont + 1; i++)
+      imprimeValoresPorNivelMFRec (aux->filhos[i], nivel, nivelPassagem + 1);
+    if (nivel == nivelPassagem)
+    {
+      for (int i=0; i < aux->cont; i++)
+        printf("%d ", aux->valores[i]);
+    }
+  }
+}
+
+void imprimeNosFolhaArvoreMF(tipo_arv_mf *arv) {
+  imprimeValoresPorNivelMF(arv, checaAlturaArvMF(arv) - 1);
 }
 
 #endif
