@@ -42,7 +42,7 @@ int main()
 
   printf("\nQuantidade de Nos: %d\n", verificaQtdNos(arvore));
 
-  printf("\nAltura da Arvore: %d\n", alturaArv(arvore));
+  printf("\nAltura da Arvore: %d\n", calculaAltura(arvore));
 
   int nivel = 1;
   printf("\nValores no nivel [%d] : ", nivel);
