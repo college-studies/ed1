@@ -25,8 +25,6 @@ int checaAlturaArvMF(tipo_arv_mf *arv);
 int qtdValoresNaArvMF(tipo_arv_mf *arv);
 void imprimeValoresPorNivelMF(tipo_arv_mf *arv, int nivel);
 void imprimeValoresPorNivelMFRec(tipo_arv_mf *arv, int nivel, int nivelPassagem);
-
-// TODO: implement
 void imprimeNosFolhaArvoreMF(tipo_arv_mf *arv);
 
 tipo_arv_mf *alocaNovoNoArvMF(int vl)
