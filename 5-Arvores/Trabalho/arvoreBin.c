@@ -18,13 +18,11 @@ void imprimePosOrdem(tipo_arvore_binaria *arv);
 int buscaPorValor(tipo_arvore_binaria *arv, int vl);
 void removeElementoArvBin(tipo_arvore_binaria **arv, int vl);
 int verificaQtdNos(tipo_arvore_binaria *arv);
-int alturaArv(tipo_arvore_binaria *arv);
 int encontraMaiorValorArv(tipo_arvore_binaria *arv);
 int encontraMenorValorArv(tipo_arvore_binaria *arv);
 int calculaAltura(tipo_arvore_binaria *arv);
 void imprimeNivel(tipo_arvore_binaria *arv, int nivel);
 void ImprimeNivelRec(tipo_arvore_binaria *raiz, int nivel, int nivelPassagem);
-void imprimeNosFolhas(tipo_arvore_binaria *arv);
 void imprimeNosFolhaArvoreBin(tipo_arvore_binaria *arv);
 
 tipo_arvore_binaria *alocaNovoNoArvoreBin(int valor)
@@ -186,30 +184,6 @@ int verificaQtdNos(tipo_arvore_binaria *arv)
   }
 }
 
-int alturaArv(tipo_arvore_binaria *arv)
-{
-  int alturaEsq, alturaDir;
-
-  if (arv == NULL)
-  {
-    return 0;
-  }
-  else
-  {
-    alturaEsq = calculaAltura(arv->esq);
-    alturaDir = calculaAltura(arv->dir);
-
-    if (alturaEsq > alturaDir)
-    {
-      return alturaEsq;
-    }
-    else
-    {
-      return alturaDir;
-    }
-  }
-}
-
 int calculaAltura(tipo_arvore_binaria *arv)
 {
   int alturaEsq, alturaDir;
@@ -227,11 +201,6 @@ int calculaAltura(tipo_arvore_binaria *arv)
     else
       return (alturaDir + 1);
   }
-}
-
-void imprimeNosFolhas(tipo_arvore_binaria *arv)
-{
-  imprimeNivel(arv, alturaArv(arv));
 }
 
 void imprimeNivel(tipo_arvore_binaria *arv, int nivel)
@@ -258,7 +227,7 @@ void ImprimeNivelRec(tipo_arvore_binaria *raiz, int nivel, int nivelPassagem)
 
 void imprimeNosFolhaArvoreBin(tipo_arvore_binaria *arv)
 {
-  imprimeNivel(arv, alturaArv(arv));
+  imprimeNivel(arv, calculaAltura(arv));
 }
 
 #endif
