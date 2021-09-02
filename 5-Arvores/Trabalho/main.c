@@ -67,6 +67,12 @@ int main()
   insereArvMF(&arvoreMF, 5);
   insereArvMF(&arvoreMF, 8);
 
+  printf("Impressao de valores por nivel ");
+  imprimeValoresPorNivelMF(arvoreMF, 0);
+
+  printf("Impressao de nos folha ");
+  imprimeNosFolhaArvoreMF(arvoreMF);
+
   printf("Pre Ordem :  ");
   percursoPreOrdemMF(arvoreMF);
 
